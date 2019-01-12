@@ -29,30 +29,30 @@ setup.template.settings:
   
 setup.kibana:
 # if your kibana is local you can change it to 127.0.0.1:80
-  host: "10.110.4.100:80"
+  host: "helk-kibana:443"
   protocol: "http"
 # identification required for X-pack  
-  username: "my_login"
+  username: "helk"
   password: "my_password"
 # path needed if kibana not at website root  
   path: "/kibana"
 
 output.elasticsearch:
 # if your elasticsearch is local you can change it to 127.0.0.1:9200
-  hosts: ["10.110.4.100:9200"]
+  hosts: ["helk-elasticsearch:9200"]
   template:
     name: "filebeat"
     path: "fields.yml"
     overwrite: false
   protocol: "http"
 # identification required for X-pack  
-  username: "my_login"
-  password: "my_password"
+  #username: "my_login"
+  #password: "my_password"
 
 # Write Filebeat own logs only to file to avoid catching them with itself in docker log files
 logging.to_files: true
 logging.to_syslog: false
 
 # X-pack optional module
-xpack.monitoring.enabled: true
+xpack.monitoring.enabled: false
 xpack.monitoring.elasticsearch:
