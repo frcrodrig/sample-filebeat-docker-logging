@@ -30,11 +30,11 @@ setup.template.settings:
   
 setup.kibana:
 # if your kibana is local you can change it to 127.0.0.1:80
-  host: "helk-kibana:443"
+  host: "helk-kibana:80"
   protocol: "http"
 # identification required for X-pack  
-  username: "helk"
-  password: "my_password"
+# username: "helk"
+# password: "my_password"
 # path needed if kibana not at website root  
   path: "/kibana"
 
